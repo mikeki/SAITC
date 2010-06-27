@@ -1,0 +1,13 @@
+one:
+  name: MyString
+  topic: MyString
+  date: 2010-06-27 18:19:31
+  content: MyText
+  link: MyString
+
+two:
+  name: MyString
+  topic: MyString
+  date: 2010-06-27 18:19:31
+  content: MyText
+  link: MyString
