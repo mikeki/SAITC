@@ -8,10 +8,7 @@
     <%= f.label :topic %><br />
     <%= f.text_field :topic %>
   </p>
-  <p>
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </p>
+    <%= f.datetime_select :date, :default=> Time.now, :disabled=>true %>
   <p>
     <%= f.label :content %><br />
     <%= f.text_area :content %>

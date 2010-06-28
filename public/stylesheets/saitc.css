@@ -1,0 +1,94 @@
+body, html {
+	background: url(../images/background.jpg) fixed;
+	
+}
+
+div#majorContent {
+	/*background: #63adf8;
+	border:2px solid white;*/
+	background: url(../images/content.png) repeat-y;
+	width: 1095px;
+	margin: -10px auto -10px auto;
+	/*-webkit-box-shadow: 7px 5px 10px #333;
+	-moz-box-shadow: 5px 5px 5px #333;
+	box-shadow: 5px 5px 5px #333;*/
+}
+
+div#header{
+	background: url(../images/header.png) no-repeat;
+	width: 891px;
+	height: 213px;
+	margin: 0px auto;
+	
+}
+
+div#header #logo{
+	padding: 40px 0px 40px 30px;
+	border: none;
+}
+
+div#header #botonHeader{
+	padding: 48px 0px 30px 0px;
+	border: none;
+}
+
+div#majorContent #login_arriba{
+	background: url(../images/top_subsection.png) no-repeat;
+	width: 259px;
+	height: 11px;
+	margin: 20px auto 0px 100px;
+}
+div#majorContent #login{
+	background: url(../images/body_subsection.png) repeat-y;
+	width: 259px;
+	height: 51px;
+	margin: 0px auto 0px 100px;
+	padding: 0px 0px 0px 8px;
+}
+div#majorContent #login_abajo{
+	background: url(../images/bottom_subsection.png) no-repeat;
+	width: 259px;
+	height: 11px;
+	margin: 0px auto 0px 100px;
+}
+
+div#majorContent div#barraBusqueda{
+    padding:0px 0px 0px 100px;
+    width:300px;
+}
+
+div#majorContent div#nuevaLaptop{
+margin:-150px 10px 0px 500px;
+
+}
+
+div#majorContent #apareceForma{
+    float:right;
+    margin:-150px 10px 0px 500px;
+}
+
+
+
+div#majorContent div#nuevaLaptop input[type=text]{
+border:1px solid #ccc;
+width:250px;
+height:25px;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+}
+
+#flash_notice, #flash_error {
+  padding: 5px 8px;
+  margin: 5px 0px 0px 100px;
+  width:240px;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
