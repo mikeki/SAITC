@@ -1,0 +1,17 @@
+one:
+  company: MyString
+  position: MyString
+  description: MyString
+  phone: MyString
+  email: MyString
+  fulltime: false
+  duedate: 2010-07-20
+
+two:
+  company: MyString
+  position: MyString
+  description: MyString
+  phone: MyString
+  email: MyString
+  fulltime: false
+  duedate: 2010-07-20
