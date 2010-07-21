@@ -6,9 +6,17 @@
 	<%end%>
   <% for post in @posts %>
   		<div id="top_section">
-  			<span id="titulo"><%=h post.name %></span>
-      	<span id="fechaNoticia"><%=h "#{post.topic} #{post.date.to_formatted_s(:long_ordinal)}" %></span>
-      	<span style="float:right"><%= link_to image_tag("bface.png", :size=>"35x35", :border=>"0"), post.link%></span>
+  		  <div id="wrapper" class="clearfix" >
+    			<div id="tituloNoticia">
+      			<span id="titulo"><%=h post.name %></span>
+          	<span id="fechaNoticia"><%=h "#{post.topic} #{post.date.to_formatted_s(:date)}" %></span>
+        	</div>
+        	<div id="linkNoticia">
+        	  <%if post.haslink?%>
+        	    <span><%= link_to image_tag("bface.png", :size=>"33x33", :border=>"0"), post.link%></span>
+        	  <%end%>
+        	</div>
+      	</div>
       </div>
       <div id="body_section">
       		<p id="contenido">

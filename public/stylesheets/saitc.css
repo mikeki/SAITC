@@ -41,7 +41,7 @@ div#footer{
 	background: url(../images/footer.png) no-repeat;
 	position: relative;
 	width: 859px;
-	height: 144px;
+	height: 98px;
 	margin: 20px auto 0px auto;
 	
 }
@@ -71,6 +71,14 @@ div#majorContent div#subsection{
 	min-height: 100%;
 	margin: -10px 0px 0px 117px;
 	padding: 0px 0px 0px 8px;
+	border: none;
+}
+div#majorContent div#tweetSubsection{
+	background: url(../images/body_subsection.png) repeat-y;
+	width: 261px;
+	min-height: 100%;
+	margin: -10px 0px 0px 117px;
+	padding: 0px 0px 0px 5px;
 	border: none;
 }
 div#majorContent div#bottom_subsection{
@@ -305,21 +313,20 @@ border:1px solid #ccc;
  border: 0px;
  }
  
- #leftcolLap{
+ #tituloNoticia{
  border: 0px;
- width:40%; 
+ width:90%; 
  float:left; 
  position:relative; 
  }
  
-#maincolLap{ 
+#linkNoticia{ 
  border: 0px; 
  float: right; 
  display:inline; 
  position: relative;
- margin: 12px 15px 0px 0px;
- padding: 0px 0px 0px 10px; 
- width:50%;
+ margin-top:-5px; 
+ width:10%;
  }
  
  #maincolsub{ 

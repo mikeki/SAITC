@@ -7,9 +7,12 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :posts
   
-  map.login "login", :controller => "user_sessions", :action => "new"
+  map.login "admin", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
   map.root :controller=>"posts", :action=>"index"
+  map.gallery "galeria", :controller => "pages", :action=>"gallery"
+  map.events "eventos", :controller=>"pages", :action=>"calendar"
+  map.quienes "quienessomos", :controller=>"pages", :action=>"about"
 
   # The priority is based upon order of creation: first created -> highest priority.
 
