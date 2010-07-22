@@ -26,7 +26,7 @@ class PagesController < ApplicationController
     flash[:notice] = ''
     if @contact.save
     begin
-        ContactMailer.deliver_contact_message(@contact)
+        ContactMailer::deliver_contact_message(@contact)
         notify_user
       rescue
         flash[:notice] = 'FLASH/RESCUE: Saved, then problems'
