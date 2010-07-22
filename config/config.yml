@@ -12,8 +12,8 @@ production:
   email:
     server: smtp.gmail.com
     port: 587
-    domain: saitc-mty.com
+    domain: gmail.com
     authentication: login
-    username: miguel.cervera@saitc-mty.com
+    username: miguelcerverac@gmail.com
     password: mikeki.27
     contact_recipient: miguelcerverac@gmail.com
