@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+    @title = "Registrando a un Nuevo Usuario"
   end
   
   def create
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
   
   def edit
     @user = current_user
+    @title = "Editando al Usuario #{@user.username}"
   end
   
   def update

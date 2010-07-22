@@ -36,10 +36,10 @@
    </script>
     <div id="majorContent">
     	<div id="header">
-        	<%= link_to image_tag ("LogoSAITC2010.png" , :id=>"logo"), root_path %>
-        	<%= link_to image_tag ("boton_SAITC_sel.png", :id=>"botonHeader"), root_path%>
-        	<%= link_to image_tag ("boton_FF_un.png", :id=>"botonHeader", :mouseover => "boton_FF_sel.png"), "#" %>
-        	<%= link_to image_tag ("boton_SW_un.png", :id=>"botonHeader", :mouseover => "boton_SW_sel.png"), "#" %>
+        	<%= link_to image_tag("LogoSAITC2010.png" , :id=>"logo"), root_path %>
+        	<%= link_to image_tag("boton_SAITC_sel.png", :id=>"botonHeader"), root_path%>
+        	<%= link_to image_tag("boton_FF_un.png", :id=>"botonHeader", :mouseover => "boton_FF_sel.png"), "#" %>
+        	<%= link_to image_tag("boton_SW_un.png", :id=>"botonHeader", :mouseover => "boton_SW_sel.png"), "#" %>
       </div>
       <div id="wrapper" class="clearfix" >
       	<div id="leftcol">
@@ -52,12 +52,12 @@
         		</span>
           </div>
           <div id="subsection">
-            <%= link_to image_tag ("bnoticias.png", :border=>"0"), root_path%>
-            <%= link_to image_tag ("beventos.png", :border=>"0"), events_path%>
-            <%= link_to image_tag ("bbolsa.png", :border=>"0"), jobs_path%>
-            <%= link_to image_tag ("bfotos.png", :border=>"0"), gallery_path%>
-            <%= link_to image_tag ("bquienes.png", :border=>"0"), quienes_path%>
-            <%= link_to image_tag ("bcontact.png", :border=>"0"), "#"%>
+            <%= link_to image_tag("bnoticias.png", :border=>"0"), root_path%>
+            <%= link_to image_tag("beventos.png", :border=>"0"), events_path%>
+            <%= link_to image_tag("bbolsa.png", :border=>"0"), jobs_path%>
+            <%= link_to image_tag("bfotos.png", :border=>"0"), gallery_path%>
+            <%= link_to image_tag("bquienes.png", :border=>"0"), quienes_path%>
+            <%= link_to image_tag("bcontact.png", :border=>"0"), "#"%>
           </div>
           <div id="bottom_subsection"></div>
           <div id="top_subsection">
@@ -72,7 +72,7 @@
               version: 2,
               type: 'profile',
               rpp: 10,
-              interval: 6000,
+              interval: 5000,
               width: 251,
               height: 300,
               theme: {
@@ -88,8 +88,8 @@
               },
               features: {
                 scrollbar: true,
-                loop: false,
-                live: true,
+                loop: true,
+                live: false,
                 hashtags: true,
                 timestamp: true,
                 avatars: false,

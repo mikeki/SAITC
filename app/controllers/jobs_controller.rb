@@ -1,14 +1,17 @@
 class JobsController < ApplicationController
   before_filter :requir_user, :except=>[:index, :show]
   def index
+    @title = "Bolsa de Trabajo"
     @jobs = Job.all
   end
   
   def show
     @job = Job.find(params[:id])
+    @title = "Oferta de trabajo en #{@job.company}"
   end
   
   def new
+    @title = "Publicar Nueva Oferta de Trabajo"
     @job = Job.new
   end
   
@@ -25,6 +28,7 @@ class JobsController < ApplicationController
   
   def edit
     @job = Job.find(params[:id])
+    @title = "Editando Oferta de #{@job.company}"
   end
   
   def update

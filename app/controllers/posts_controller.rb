@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
   before_filter :require_user, :except => [:index]
   def index
+    @title = "Home"
     @posts = Post.all
   end
   
   def new
+    @title = "Nueva Noticia"
     @post = Post.new
   end
   
@@ -19,6 +21,7 @@ class PostsController < ApplicationController
   end
   
   def edit
+    @title = "Editando Noticia"
     @post = Post.find(params[:id])
   end
   

@@ -4,7 +4,7 @@
 # by Ivan Torres (mexpolk@gmail.com)
 # Added datetime / prompts for time_select helper
 # by Daniel Roux ( daniel.roux@gmail.com)
- 
+
 es:
   number:
     percentage:
@@ -25,7 +25,7 @@ es:
     precision:
       format:
         delimiter: ","
- 
+        
   date:
     order: [:day, :month, :year]
     abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
@@ -38,12 +38,12 @@ es:
       long: "%A, %d de %B de %Y"
   time:
     formats:
-      short: "%d de %b de %Y"
-      default: "%a, %d de %B de %Y"
+      short: "%d de %b a las %H:%M hrs"
+      default: "%a, %d de %b de %Y a las %H:%M:%S %Z"
       long: "%A, %d de %B de %Y a las %I:%M %p"
     am: "am"
     pm: "pm"
- 
+
   datetime:
     distance_in_words:
       half_a_minute: "medio minuto"
@@ -81,13 +81,13 @@ es:
       hour: 'Hora'
       minute: 'Minuto'
       second: 'Segundo'        
- 
+
   activerecord:
-    errors: 
+    errors:
       template:
         header:
           one: "{{model}} no pudo guardarse debido a 1 error"
-          other: "El {{model}} no pudo guardarse debido a {{count}} errores"
+          other: "{{model}} no pudo guardarse debido a {{count}} errores"
         body: "Revise que los siguientes campos sean válidos:"
       messages:
         inclusion: "no está incluído en la lista"
