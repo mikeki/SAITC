@@ -1,0 +1,19 @@
+# ...\config\config.yml
+development:
+  email:
+    server: smtp.gmail.com
+    port: 587
+    domain: saitc-mty.com
+    authentication: none
+    username:
+    password:
+    contact_recipient: miguelcerverac@gmail.com
+production:
+  email:
+    server: smtp.gmail.com
+    port: 587
+    domain: saitc-mty.com
+    authentication: login
+    username: miguel.cervera@saitc-mty.com
+    password: mikeki.27
+    contact_recipient: miguelcerverac@gmail.com

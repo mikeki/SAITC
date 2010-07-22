@@ -1,0 +1,19 @@
+ <%# ...\views\home\sent.rhtml -%>
+  <body>
+    <div id="page">
+      <div id="content">
+        <div id="header">
+          <%= link_to "Home", {:controller => "home", :action => "ix"} -%>
+          <br /><br />
+          <h1>Message sent</h1>
+        </div>
+          <br /><br />
+          <p><strong>Your Name: </strong><%=@contact.name -%></p>
+          <p><strong>Your Email Address: </strong><%=@contact.email_address -%></p>
+          <p><strong>Your Message: </strong></p>
+          <p><%=@contact.message -%></p>
+          <p><strong>Sent at: </strong> <%=Time.now.to_s -%></p>
+      </div>
+      <div id="footer"> </div>
+    </div>
+  </body>

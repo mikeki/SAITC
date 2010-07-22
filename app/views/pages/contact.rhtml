@@ -1,0 +1,17 @@
+ <%# ...\views\home\contact.rhtml-%>
+  <body>
+    <div id="page">
+      <div id="content">
+        <%= link_to "Home", root_path -%>
+        <%=error_messages_for "contact" -%>
+        <% form_tag :controller=>"pages",:action=>"send_contact_request" do -%>
+          <p>Name <%= text_field("contact", "name") -%></p>
+          <p>Email <%= text_field("contact", "email_address") -%></p>
+          <p>Message<br />
+             <%= text_area("contact", "message", {"cols"=>"40", "rows"=>"5"}) -%>
+          </p>
+          <%= submit_tag "Send" -%>
+        <% end -%>
+      </div>
+    </div>
+  </body>
