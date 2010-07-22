@@ -44,14 +44,4 @@ Rails::Initializer.run do |config|
 
 end
 
-ActionMailer::Base.delivery_method = :smtp
-c = YAML::load(File.open("#{RAILS_ROOT}/config/config.yml"))
-ActionMailer::Base.smtp_settings = {
-:address        => c[RAILS_ENV]['email']['server'],
-:port           => c[RAILS_ENV]['email']['port'],
-:domain         => c[RAILS_ENV]['email']['domain'],
-:authentication => c[RAILS_ENV]['email']['authentication'],
-:user_name      => c[RAILS_ENV]['email']['username'],
-:password       => c[RAILS_ENV]['email']['password']
-}
-CONTACT_RECIPIENT = c[RAILS_ENV]['email']['contact_recipient']
+
