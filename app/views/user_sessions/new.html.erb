@@ -1,16 +1,20 @@
-<% title "New User Session" %>
-
-<% form_for @user_session do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
-
-
+<div id="maincol">
+  <div id="top_section"><%=@title%></div>
+  <div id="body_section">
+    <div id="contenido">
+      <% form_for @user_session do |f| %>
+        <%= f.error_messages %>
+        <p>
+          <%= f.label :username, "Nombre de Usuario" %><br />
+          <%= f.text_field :username %>
+        </p>
+        <p>
+          <%= f.label :password, "Contraseña" %><br />
+          <%= f.password_field :password %>
+        </p>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+  <div id="bottom_section"></div>
+</div>

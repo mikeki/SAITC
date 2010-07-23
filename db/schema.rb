@@ -9,18 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100720153034) do
+ActiveRecord::Schema.define(:version => 20100723162137) do
 
   create_table "jobs", :force => true do |t|
     t.string   "company"
     t.string   "position"
-    t.string   "description"
+    t.text     "description"
     t.string   "phone"
     t.string   "email"
-    t.boolean  "fulltime",    :default => false
-    t.date     "duedate"
+    t.boolean  "fulltime"
+    t.boolean  "internship"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location"
+    t.string   "experience"
+    t.integer  "maxpay"
+    t.integer  "minpay"
   end
 
   create_table "posts", :force => true do |t|
@@ -31,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20100720153034) do
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "haslink",    :default => false
   end
 
   create_table "users", :force => true do |t|

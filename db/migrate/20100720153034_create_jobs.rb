@@ -3,10 +3,11 @@ class CreateJobs < ActiveRecord::Migration
     create_table :jobs do |t|
       t.string :company
       t.string :position
-      t.string :description
+      t.text :description
       t.string :phone
       t.string :email
-      t.boolean :fulltime, :default=>"0"
+      t.boolean :fulltime
+      t.boolean :internship
       t.date :duedate
       t.timestamps
     end

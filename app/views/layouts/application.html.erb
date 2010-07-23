@@ -36,23 +36,43 @@
    </script>
     <div id="majorContent">
     	<div id="header">
-        	<%= link_to image_tag ("LogoSAITC2010.png" , :id=>"logo"), root_path %>
-        	<%= link_to image_tag ("boton_SAITC_sel.png", :id=>"botonHeader"), root_path%>
-        	<%= link_to image_tag ("boton_FF_un.png", :id=>"botonHeader", :mouseover => "boton_FF_sel.png"), "#" %>
-        	<%= link_to image_tag ("boton_SW_un.png", :id=>"botonHeader", :mouseover => "boton_SW_sel.png"), "#" %>
+        	<%= link_to image_tag("LogoSAITC2010.png" , :id=>"logo"), root_path %>
+        	<%= link_to image_tag("boton_SAITC_sel.png", :id=>"botonHeader"), root_path%>
+        	<%= link_to image_tag("boton_FF_un.png", :id=>"botonHeader", :mouseover => "boton_FF_sel.png"), "#" %>
+        	<%= link_to image_tag("boton_SW_un.png", :id=>"botonHeader", :mouseover => "boton_SW_sel.png"), "#" %>
       </div>
       <div id="wrapper" class="clearfix" >
       	<div id="leftcol">
       	  <% flash.each do |key, value| %>
         		<%= content_tag(:div, value, :id => "flash_#{key}") %>
         	<% end %> 
+        	<%if current_user%>
+            <div id="top_subsection">
+      				<span>
+      					Administración
+          		</span>
+            </div>
+            <div id="subsection">
+              <%= link_to 'Nueva Noticia', new_post_path %><br />
+              <%= link_to 'Nueva Oferta de Trabajo', new_job_path %><br />
+              <br />
+              <%= link_to 'Nuevo Administrador', new_user_path %><br />
+              <%= link_to 'Logout', logout_path %>
+            </div>
+            <div id="bottom_subsection"></div>
+          <%end%>
         	<div id="top_subsection">
     				<span>
     					Menu Principal
         		</span>
           </div>
           <div id="subsection">
-            <%= link_to image_tag ("bcontact.png", :border=>"0"), "#"%>
+            <%= link_to image_tag("bnoticias.png", :border=>"0"), root_path%>
+            <%= link_to image_tag("beventos.png", :border=>"0"), events_path%>
+            <%= link_to image_tag("bbolsa.png", :border=>"0"), jobs_path%>
+            <%= link_to image_tag("bfotos.png", :border=>"0"), gallery_path%>
+            <%= link_to image_tag("bquienes.png", :border=>"0"), quienes_path%>
+            <%= link_to image_tag("bcontact.png", :border=>"0"), contact_path%>
           </div>
           <div id="bottom_subsection"></div>
           <div id="top_subsection">
@@ -60,25 +80,66 @@
     					Twitter
         		</span>
           </div>
-          <div id="subsection">
-            Aqui van los tweets
+          <div id="tweetSubsection">
+            <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+            <script>
+            new TWTR.Widget({
+              version: 2,
+              type: 'profile',
+              rpp: 10,
+              interval: 5000,
+              width: 251,
+              height: 200,
+              theme: {
+                shell: {
+                  background: '#a1e5f8',
+                  color: '#000000'
+                },
+                tweets: {
+                  background: '#50bef5',
+                  color: '#000000',
+                  links: '#ffffff'
+                }
+              },
+              features: {
+                scrollbar: true,
+                loop: true,
+                live: false,
+                hashtags: true,
+                timestamp: true,
+                avatars: false,
+                behavior: 'all'
+              }
+            }).render().setUser('SAITC').start();
+            </script>
           </div>
           <div id="bottom_subsection"></div>
-          <%if current_user%>
-            <div id="top_subsection">
-      				<span>
-      					Administración
-          		</span>
-            </div>
-            <div id="subsection">
-              Links de administrador
-            </div>
-            <div id="bottom_subsection"></div>
-          <%end%>
       	</div>
       <%= yield %>
       </div>
       <div id="footer">
+        <div id="wrapper" class="clearfix">
+          <div id="linksBajo">
+            <%= link_to 'Noticias', root_path %> |
+            <%= link_to 'Eventos', events_path %> |
+            <%= link_to 'Bolsa de Trabajo', jobs_path %> |
+            <%= link_to 'Galería de Fotos', gallery_path %> |
+            <%= link_to '¿Quiénes Somos?', quienes_path %> |
+            <%= link_to 'Contacto', contact_path %>
+            <%if current_user%>
+              | <%= link_to 'Logout', logout_path %>
+            <%end%>
+            <br />
+            <br />
+            <%= image_tag 'desmall.png' %>
+            <%= image_tag 'csasmall.png' %>
+            <%= image_tag 'saitcsmall.png' %>
+          </div>
+          <div id="facebookBajo">
+            <span><%= link_to image_tag('bface.png',:border=>0), "http://www.facebook.com/group.php?gid=2325494520"-%></span>
+            <span><%= link_to image_tag('btweet.png',:border=>0), "http://www.twitter.com/SAITC"-%></spam>
+          </div>
+        </div>
       </dv>
     </div>
   </body>

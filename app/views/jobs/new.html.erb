@@ -1,5 +1,9 @@
-<% title "New Job" %>
-
-<%= render :partial => 'form' %>
-
-<p><%= link_to "Back to List", jobs_path %></p>
+<div id="maincol">
+  <div id="top_section"><%=@title%></div>
+  <div id="body_section">
+    <div id="contenido">
+      <%= render :partial => 'form' %>
+    </div>
+  </div>
+  <div id="bottom_section"></div>
+</div>
