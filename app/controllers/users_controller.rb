@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:notice] = "Registration successful."
+      flash[:notice] = "Se creo un nuevo usuario satisfactoriamente."
       redirect_to root_url
     else
       render :action => 'new'
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Successfully updated profile."
+      flash[:notice] = "Se actualizo un usuario satisfactoriamente."
       redirect_to root_url
     else
       render :action => 'edit'
