@@ -338,14 +338,18 @@ border:1px solid #ccc;
  float:left; 
  position:relative; 
  }
+
+#linksBajo img{
+ margin-left:10px; 
+}
  
 #facebookBajo{ 
  border: 0px; 
  float: right; 
- padding-top:5px;
+ padding-top:21px;
  display:inline; 
  position: relative; 
- width:7%;
+ width:18%;
  }
  
  #maincolsub{ 

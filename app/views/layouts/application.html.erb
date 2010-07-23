@@ -46,6 +46,20 @@
       	  <% flash.each do |key, value| %>
         		<%= content_tag(:div, value, :id => "flash_#{key}") %>
         	<% end %> 
+        	<%if current_user%>
+            <div id="top_subsection">
+      				<span>
+      					Administración
+          		</span>
+            </div>
+            <div id="subsection">
+              <%= link_to 'Nueva Noticia', new_post_path %><br />
+              <%= link_to 'Nueva Oferta de Trabajo', new_job_path %><br />
+              <br />
+              <%= link_to 'Logout', logout_path %>
+            </div>
+            <div id="bottom_subsection"></div>
+          <%end%>
         	<div id="top_subsection">
     				<span>
     					Menu Principal
@@ -99,17 +113,6 @@
             </script>
           </div>
           <div id="bottom_subsection"></div>
-          <%if current_user%>
-            <div id="top_subsection">
-      				<span>
-      					Administración
-          		</span>
-            </div>
-            <div id="subsection">
-              Links de administrador
-            </div>
-            <div id="bottom_subsection"></div>
-          <%end%>
       	</div>
       <%= yield %>
       </div>
@@ -125,9 +128,15 @@
             <%if current_user%>
               | <%= link_to 'Logout', logout_path %>
             <%end%>
+            <br />
+            <br />
+            <%= image_tag 'desmall.png' %>
+            <%= image_tag 'csasmall.png' %>
+            <%= image_tag 'saitcsmall.png' %>
           </div>
           <div id="facebookBajo">
-            <%= link_to image_tag('bface.png', :size=>"45x45",:border=>0), "http://www.facebook.com/group.php?gid=2325494520"%>
+            <span><%= link_to image_tag('bface.png',:border=>0), "http://www.facebook.com/group.php?gid=2325494520"-%></span>
+            <span><%= link_to image_tag('btweet.png',:border=>0), "http://www.twitter.com/SAITC"-%></spam>
           </div>
         </div>
       </dv>
