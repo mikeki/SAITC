@@ -1,36 +1,68 @@
-<% title "Job" %>
-
-<p>
-  <strong>Company:</strong>
-  <%=h @job.company %>
-</p>
-<p>
-  <strong>Position:</strong>
-  <%=h @job.position %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%=h @job.description %>
-</p>
-<p>
-  <strong>Phone:</strong>
-  <%=h @job.phone %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%=h @job.email %>
-</p>
-<p>
-  <strong>Fulltime:</strong>
-  <%=h @job.fulltime %>
-</p>
-<p>
-  <strong>Duedate:</strong>
-  <%=h @job.duedate %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_job_path(@job) %> |
-  <%= link_to "Destroy", @job, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", jobs_path %>
-</p>
+<div id="maincol">
+  <div id="top_section"><%=@title%></div>
+  <div id="body_section">
+    <div id="contenido">
+      <h3>Datos de la Oferta de Trabajo</h3>
+      <div id="oferta">
+        <p>
+          <strong>Empresa:</strong>
+          <%=h @job.company %>
+        </p>
+        <p>
+          <strong>Nombre del puesto:</strong>
+          <%=h @job.position %>
+        </p>
+        <p>
+          <strong>Ubicación:</strong>
+        	<%=h @job.location%>
+        </p>
+        <p>
+          <strong>Tipo de trabajo:</strong>
+    			<%if @job.fulltime? and @job.internship?%>
+    			  Fulltime e Internship
+    			<%elsif @job.fulltime?%>
+    			  Fulltime
+    			<%else%>
+    			  Internship
+    			<%end%>
+        </p>
+        <p>
+          <strong>Años de Experiencia:</strong>
+        	<%=h @job.experience%>
+        </p>
+        <p>
+          <strong>Descripción de la oferta:</strong><br/>
+          <%=h sanitize(@job.description.gsub("\n", "<br />")) %>
+        </p>
+        <p>
+          <%if @job.minpay != 0 and !@job.minpay.nil?%>
+      			<strong>Rango de Sueldo: </strong>
+      			<%=h number_to_currency(@job.minpay)%> - <%=h number_to_currency(@job.maxpay)%> Pesos
+          <%end%>
+        </p>
+      </div>
+      <h3>Datos de Contacto</h3>
+      <div id="oferta">
+        <p>
+          <strong>Teléfono:</strong>
+          <%=h @job.phone %>
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <%=h @job.email %>
+        </p>
+      </div>
+      <br />
+      <div style="font-size:12px">
+        Publicado hace <%=h distance_of_time_in_words_to_now(@job.created_at)%>
+      </div>
+      <br />
+      <%if current_user%>
+        <%= link_to "Edit", edit_job_path(@job) %> |
+        <%= link_to "Destroy", @job, :confirm => 'Are you sure?', :method => :delete %> |
+        <%= link_to "View All", jobs_path %>
+      <%end%>
+    </div>
+  </div>
+  <div id="bottom_section"></div>
+</div>

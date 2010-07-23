@@ -1,6 +1,6 @@
 body, html {
 	background: url(../images/background.jpg) fixed;
-	font-family: "Verdana";
+	font-family: "Verdana","Arial","Helvetica",sans-serif;
 }
 
 div#majorContent {
@@ -328,6 +328,25 @@ border:1px solid #ccc;
  margin-top:-5px; 
  width:10%;
  }
+
+#linksBajo{
+ font-size: 12px;
+ margin-top: 10px;
+ margin-left: 15px;
+ border: 0px;
+ width:80%; 
+ float:left; 
+ position:relative; 
+ }
+ 
+#facebookBajo{ 
+ border: 0px; 
+ float: right; 
+ padding-top:5px;
+ display:inline; 
+ position: relative; 
+ width:7%;
+ }
  
  #maincolsub{ 
  border: 0px; 
@@ -377,7 +396,7 @@ height: 0;
 #twocols, #maincol{width:100%; float:none;}
 }
 
-table.laptops
+table.tabla
 { width: 558px;
 background-color: #fafafa;
 border: 1px #000000 solid;
@@ -435,4 +454,8 @@ padding-right: 2px; }
  border: 1px solid black;   
  overflow:auto;
  background:white;
+}
+
+#oferta{
+    border: 2px #6699cc dotted;
 }

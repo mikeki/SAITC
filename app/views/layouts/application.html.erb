@@ -74,7 +74,7 @@
               rpp: 10,
               interval: 5000,
               width: 251,
-              height: 300,
+              height: 200,
               theme: {
                 shell: {
                   background: '#a1e5f8',
@@ -114,6 +114,22 @@
       <%= yield %>
       </div>
       <div id="footer">
+        <div id="wrapper" class="clearfix">
+          <div id="linksBajo">
+            <%= link_to 'Noticias', root_path %> |
+            <%= link_to 'Eventos', events_path %> |
+            <%= link_to 'Bolsa de Trabajo', jobs_path %> |
+            <%= link_to 'Galería de Fotos', gallery_path %> |
+            <%= link_to '¿Quiénes Somos?', quienes_path %> |
+            <%= link_to 'Contacto', contact_path %>
+            <%if current_user%>
+              | <%= link_to 'Logout', logout_path %>
+            <%end%>
+          </div>
+          <div id="facebookBajo">
+            <%= link_to image_tag('bface.png', :size=>"45x45",:border=>0), "http://www.facebook.com/group.php?gid=2325494520"%>
+          </div>
+        </div>
       </dv>
     </div>
   </body>

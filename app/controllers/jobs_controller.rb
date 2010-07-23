@@ -1,8 +1,14 @@
 class JobsController < ApplicationController
-  before_filter :requir_user, :except=>[:index, :show]
+  before_filter :require_user, :except=>[:index, :show]
   def index
     @title = "Bolsa de Trabajo"
-    @jobs = Job.all
+    if params[:tipo] == "1"
+      @jobs = Job.paginate(:page => params[:page], :per_page=>15, :conditions=>{:fulltime => true})
+    elsif params[:tipo] == "2"
+      @jobs = Job.paginate(:page => params[:page], :per_page=>15, :conditions=>{:internship => true})
+    else
+      @jobs = Job.paginate(:page => params[:page], :per_page=>15)
+    end
   end
   
   def show
