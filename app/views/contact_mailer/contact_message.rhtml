@@ -1,10 +1,11 @@
  <%# ...\views\contact_mailer\contact_message.rhtml -%>
-Contact from my web site.
+Mensaje de Contacto de SAITC.
 ========================================
-User: <%=@name -%>
-Email: <%=@email_address -%>
-Message:
+Nombre: <%=@name %>
+Email: <%=@email_address %>
+Asunto: <%=@subject%>
+Mensaje:
 ----------------------------------------
-<%=@message -%>
+<%=@message %>
 ----------------------------------------
-Generated at <%=Time.now.to_s -%>
+Enviado el día <%=Time.now.to_formatted_s(:long) %>

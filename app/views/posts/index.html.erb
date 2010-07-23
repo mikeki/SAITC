@@ -30,5 +30,10 @@
       </div>
       <div id="bottom_section"></div>
   <% end %>
- 
+  <% unless will_paginate.nil?%>
+    <div id="top_section"><%=will_paginate%></div>
+    <div id="body_section"></div>
+    <div id="bottom_section"></div>
+  <%end%>
+  
 </div>

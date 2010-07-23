@@ -15,35 +15,29 @@ class PagesController < ApplicationController
 # muestra la forma de contacto
 #----------------------------------------------------
   def contact
+    @title = "Contacto"
     @contact = Contact.new
   end
   
 #----------------------------------------------------
 # procesa el email
 #----------------------------------------------------
-  def send_contact_request
+  def enviar_mensaje
     @contact = Contact.new(params['contact'])
-    flash[:notice] = ''
     if @contact.save
-    begin
-        ContactMailer.deliver_contact_message(@contact)
-        notify_user
+      begin
+        ContactMailer::deliver_contact_message(@contact)
+        flash[:notice] = 'El mensaje fue enviado satisfactoriamente.'
+        redirect_to root_path
       rescue
-        flash[:notice] = 'FLASH/RESCUE: Saved, then problems'
+        @title="Contacto"
+        flash[:error] = 'Ocurrió un problema al enviar el mensaje.'
         render :action=>"contact"
-    end
+      end
     else
-      flash[:notice] = 'FLASH: Not saved'
+      @title="Contacto"
       render :action=>"contact"
     end
-  end
-  
-#----------------------------------------------------
-# se muestra cuando un correo es enviado satisfactriamente
-#----------------------------------------------------
-  def notify_user
-    flash[:notice] = 'FLASH: Saved and sent via notify_user'
-    render :action=> "sent"
   end
 
 end

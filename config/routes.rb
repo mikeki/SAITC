@@ -13,6 +13,8 @@ ActionController::Routing::Routes.draw do |map|
   map.gallery "galeria", :controller => "pages", :action=>"gallery"
   map.events "eventos", :controller=>"pages", :action=>"calendar"
   map.quienes "quienessomos", :controller=>"pages", :action=>"about"
+  map.contact "contacto", :controller=>"pages", :action=>"contact"
+  map.sent "contacto/enviado", :controller=>"pages", :action=>"enviar_mensaje"
 
   # The priority is based upon order of creation: first created -> highest priority.
 

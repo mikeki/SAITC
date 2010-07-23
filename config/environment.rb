@@ -3,8 +3,6 @@
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 
-CONTACT_RECIPIENT = "miguelcererac@gmail.com"
-
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
@@ -23,6 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "authlogic"
+  config.gem 'will_paginate', :version => '2.3.14'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -46,3 +45,32 @@ Rails::Initializer.run do |config|
   config.i18n.default_locale = :es
 
 end
+
+####################################################################################
+# Configuracion del gmail                                                          #
+require 'tlsmail'                                                                  #
+                                                                                   #
+# Es el email a donde se enviaran los correos                                      #
+CONTACT_RECIPIENT = 'miguelcerverac@gmail.com'                                     #
+                                                                                   #
+# Gmail utiliza TLS, por lo que se habilita primero                                #
+Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)                                    #
+# El método de entrega es smtp                                                     #
+ActionMailer::Base.delivery_method = :smtp                                         #
+# Se envían los correos                                                            #
+ActionMailer::Base.perform_deliveries = true                                       #
+# El charset por default                                                           #
+ActionMailer::Base.default_charset = "utf-8"                                       #
+# Se muestran errores de entrega de correo                                         #
+ActionMailer::Base.raise_delivery_errors = true                                    #
+# Se configuran las propiedades de entrega de SMTP                                 #
+ActionMailer::Base.smtp_settings = {                                               #
+  :domain          => "formatfest@saitc-mty.com",                                  #
+  :address         => 'smtp.gmail.com',                                            #
+  :port            => 587,                                                         #
+  :tls             => true,                                                        #
+  :authentication  => :plain,                                                      #
+  :user_name       => 'formatfest@saitc-mty.com',                                  #
+  :password        => 'secreto'                                                    #
+}                                                                                  #
+####################################################################################
