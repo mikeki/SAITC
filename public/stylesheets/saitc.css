@@ -113,14 +113,6 @@ div#majorContent div#bottom_section{
 	margin: 0px 0px 0px 22px;
 }
 
-div#majorContent div#top_subsection span#logged{
-	font-size: 20px;
-}
-
-div#majorContent div#top_subsection span#laptops{
-	font-size: 15px;
-}
-
 div#majorContent div#top_section #titulo{
 	font-size: 20px;
 	text-decoration: underline;
@@ -131,8 +123,17 @@ div#majorContent div#top_section #fechaNoticia{
 	font-size: 9px;
 }
  
-div#majorContent div#body_section #contenido{
+div#majorContent div#body_section div#contenido{
 	text-align: justify;
+	margin: -4px 0px 0px 0px;
+	padding: 5px 10px 0px 10px;
+	border: none;
+
+}
+
+div#majorContent div#body_section p#contenido{
+	text-align: justify;
+	line-height: 1.5;
 	margin: -4px 0px 0px 0px;
 	padding: 5px 10px 0px 10px;
 	border: none;
@@ -172,76 +173,6 @@ div#majorContent div#body_section #contenido textarea{
 -webkit-border-radius:6px;
 border:1px solid #ccc;
 
-}
-
-div#basico{
-    border: 2px dashed #63adf8;
-    text-align:center;
-}
-
-div#basico ul{
-margin:0;
-}
-
-div#basico li{
-    list-style:none;
-    display:inline-block;
-     padding: 3px 31px 3px 0px;
-     font-size:15px;
-     margin-left:-20px;
-}
-
-div#personalizado ul{
-    margin:0;
-    text-align:center;
-}
-
-div#personalizado li{
-     font-size:15px;
-     list-style:none;
-    display:inline-block;
-     padding: 3px 31px 3px 0px;
-     margin-left:-20px;
-}
-
-div#personalizado{
-    border: 2px dashed #63adf8;
-}
-
-div#majorContent #apareceForma{
-    margin: -5px 85px 10px 10px;
-}
-
-div#majorContent div#listadoUsuarios{
-    margin:10px 120px;
-    
-}
-
-div#majorContent div#editarUsuario{
-   margin:10px 120px;
-   width:300px;
-}
-
-div#majorContent div#showLaptop{
-    margin:10px 120px;
-   width:300px;
-    
-}
-
-div#majorContent div#nuevaLaptop input[type=text]{
-border:1px solid #ccc;
-width:250px;
-height:25px;
--moz-border-radius:6px;
--webkit-border-radius:6px;
-padding-left:3px;
-font-size:15px;
-}
-
-div#majorContent div#nuevaLaptop textarea{
-border:1px solid #ccc;
--moz-border-radius:6px;
--webkit-border-radius:6px;
 }
 
 
@@ -358,20 +289,6 @@ border:1px solid #ccc;
  display:inline; 
  position: relative; 
  width:50%;
- }
- 
- #botonLap{
- 	margin: 0px 0px 0px 8px;
- }
- 
- #nofin{
- 	font-weight: bold;
- 	color: #FF0000;
- }
- 
- #fin{
- 	font-weight: bold;
- 	color: #33cc00;
  }
  
  
