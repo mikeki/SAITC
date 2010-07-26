@@ -51,7 +51,7 @@ end
 require 'tlsmail'                                                                  #
                                                                                    #
 # Es el email a donde se enviaran los correos                                      #
-CONTACT_RECIPIENT = 'miguelcerverac@gmail.com'                                     #
+CONTACT_RECIPIENT = 'contacto@saitc-mty.com'                                       #
                                                                                    #
 # Gmail utiliza TLS, por lo que se habilita primero                                #
 Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)                                    #

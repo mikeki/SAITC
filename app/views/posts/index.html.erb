@@ -7,9 +7,16 @@
   <% for post in @posts %>
   		<div id="top_section">
   		  <div id="wrapper" class="clearfix" >
-    			<div id="tituloNoticia">
-      			<span id="titulo"><%=h post.name %></span>
-          	<span id="fechaNoticia"><%=h "#{post.topic} #{post.date.to_formatted_s(:date)}" %></span>
+    			<div id="Noticia">
+      			<div id="wrapper" class="clearfix" >
+      			  <div id="temaNoticia">
+      			    <%= image_tag "t#{post.topic}.png" %>
+      			  </div>
+      			  <div id="tituloNoticia">
+          			<span id="titulo"><%=h post.name %></span>
+              	<span id="fechaNoticia"><%=h "#{post.created_at.to_formatted_s(:date)}" %></span>
+        	    </div>
+        	  </div>
         	</div>
         	<div id="linkNoticia">
         	  <%if post.haslink?%>

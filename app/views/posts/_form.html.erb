@@ -2,14 +2,13 @@
 
   <%= f.error_messages %>
   <p>
-    <%= f.label :name, "Titulo" %><br />
+    <%= f.label :name, "Título" %><br />
     <%= f.text_field :name %>
   </p>
   <p>
     <%= f.label :topic, "Tema" %><br />
-    <%= f.text_field :topic %>
+    <%= f.select :topic, Post::TOPIC, :prompt => "Selecciona un tema"%><br />
   </p>
-    <%= f.hidden_field :date, :value=> Time.now %>
   <p>
     <%= f.label :content, "Contenido" %><br />
     <%= f.text_area :content %>

@@ -37,6 +37,14 @@ div#header #botonHeader{
 	border: none;
 }
 
+div#header #botonHeaderFuera{
+	display:inline;
+	margin: 0px 0px 59px 1px;
+	border: none;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}
+
 div#footer{
 	background: url(../images/footer.png) no-repeat;
 	position: relative;
@@ -246,12 +254,28 @@ border:1px solid #ccc;
  
  #tituloNoticia{
  border: 0px;
+ width:94%; 
+ float:right; 
+ position:relative; 
+ }
+ 
+ #temaNoticia{ 
+ border: 0px; 
+ float: left; 
+ display:inline; 
+ position: relative;
+ margin-top:-3px; 
+ width:6%;
+ }
+ 
+ #Noticia{
+ border: 0px;
  width:90%; 
  float:left; 
  position:relative; 
  }
  
-#linkNoticia{ 
+ #linkNoticia{ 
  border: 0px; 
  float: right; 
  display:inline; 

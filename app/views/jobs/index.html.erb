@@ -7,50 +7,54 @@
   <div id="top_section"><%=h @title%></div>
   <div id="body_section">
     <div id="contenido">
-      <div style="busqueda">
-        <script type="text/javascript">
-          $j(function(){
-            <%if params[:estado] == "1"%>
-              $j("#uno").attr("selected", "selected");
-            <%elsif params[:estado] == "2"%>
-              $j("#dos").attr("selected", "selected");
+      <%if @jobs.count > 0%>
+        <div id="busqueda">
+          <script type="text/javascript">
+            $j(function(){
+              <%if params[:estado] == "1"%>
+                $j("#uno").attr("selected", "selected");
+              <%elsif params[:estado] == "2"%>
+                $j("#dos").attr("selected", "selected");
+              <%end%>
+            });
+          </script>
+          <% form_tag  jobs_path, :method => "GET" do -%>
+            <%= select_tag "tipo", "<option value=\"0\">Todas</option>
+                  <option value=\"1\" id=\"uno\">Fulltime</option>
+                  <option value=\"2\" id=\"dos\">Internship</option>"%>
+               <%= submit_tag 'Filtrar', :name => ""%>
+           <% end -%>
+        </div>
+        <%= will_paginate :previous_label => "<<", :next_label => ">>"%>
+        <table class="tabla" cellspacing="0">
+          <tr>
+            <th class="titulos">Fecha</th>
+            <th class="titulos">Nombre del Puesto</th>
+            <th class="titulos">Empresa</th>
+            <th class="titulos">Ubicación</th>
+            <th class="titulos">Ver</th>
+            <%if current_user%>
+              <th class="titulos">Editar</th>
+              <th class="titulos">Eliminar</th>
             <%end%>
-          });
-        </script>
-        <% form_tag  jobs_path, :method => "GET" do -%>
-          <%= select_tag "tipo", "<option value=\"0\">Todas</option>
-                <option value=\"1\" id=\"uno\">Fulltime</option>
-                <option value=\"2\" id=\"dos\">Internship</option>"%>
-             <%= submit_tag 'Filtrar', :name => ""%>
-         <% end -%>
-      </div>
-      <%= will_paginate :previous_label => "<<", :next_label => ">>"%>
-      <table class="tabla" cellspacing="0">
-        <tr>
-          <th class="titulos">Fecha</th>
-          <th class="titulos">Nombre del Puesto</th>
-          <th class="titulos">Empresa</th>
-          <th class="titulos">Ubicación</th>
-          <th class="titulos">Ver</th>
-          <%if current_user%>
-            <th class="titulos">Editar</th>
-            <th class="titulos">Eliminar</th>
-          <%end%>
-        </tr>
-      <% for job in @jobs %>
-    		<tr>
-    		  <td class="lista"><%=h job.created_at.to_formatted_s(:short)%></td>
-    		  <td class="lista"><%= job.position%></td>
-    		  <td class="lista"><%= job.company%></td>
-    		  <td class="lista"><%= job.location%></td>
-    		  <td class="lista"><%= link_to "Ver", job%></td>
-    		  <%if current_user%>
-    		    <td class="lista"><%= link_to "Editar", edit_job_path(job)%></td>
-    		    <td class="lista"><%= link_to "Destroy", job, :confirm => '¿Seguro que deséas eliminar esta bolsa de trabajo?', :method => :delete %></td>
-    		  <%end%>
-    		</tr>
+          </tr>
+        <% for job in @jobs %>
+      		<tr>
+      		  <td class="lista"><%=h job.created_at.to_formatted_s(:short)%></td>
+      		  <td class="lista"><%= job.position%></td>
+      		  <td class="lista"><%= job.company%></td>
+      		  <td class="lista"><%= job.location%></td>
+      		  <td class="lista"><%= link_to "Ver", job%></td>
+      		  <%if current_user%>
+      		    <td class="lista"><%= link_to "Editar", edit_job_path(job)%></td>
+      		    <td class="lista"><%= link_to "Destroy", job, :confirm => '¿Seguro que deséas eliminar esta bolsa de trabajo?', :method => :delete %></td>
+      		  <%end%>
+      		</tr>
+        <%end%>
+        </table>
+      <%else%>
+        <span>Lo sentimos, pero por el momento no hay ofertas de trabajo en la bolsa.</span>
       <%end%>
-      </table>
     </div> 
   </div>
   <div id="bottom_section"></div>
