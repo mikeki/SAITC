@@ -101,7 +101,7 @@ div#majorContent div#top_section{
 	width: 578px;
 	height: 37px;
 	margin: 10px 0px 0px 22px;
-	padding: 10px 0px 0px 10px;
+	padding: 8px 0px 0px 10px;
 	border: none;
 }
 
@@ -255,7 +255,8 @@ border:1px solid #ccc;
  #tituloNoticia{
  border: 0px;
  width:94%; 
- float:right; 
+ float:right;
+ margin-top:-2px; 
  position:relative; 
  }
  
