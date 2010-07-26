@@ -1,3 +1,5 @@
+img, div {behavior: url(../stylesheets/resources/iepngfix.htc)}
+
 body, html {
 	background: url(../images/background.jpg) fixed;
 	font-family: "Verdana","Arial","Helvetica",sans-serif;
