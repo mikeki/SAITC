@@ -22,6 +22,8 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "authlogic"
   config.gem 'will_paginate', :version => '2.3.14'
+  
+  #HABILITAR AL HACER DEPLOYMENT
   config.gem 'memcached-northscale', :lib => 'memcached'
   require 'memcached'
 
