@@ -19,7 +19,7 @@ config.action_view.cache_template_loading            = true
 # config.cache_store = :mem_cache_store
 
 #HABILITAR AL HACER DEPLOYMENT
-config.cache_store = :mem_cache_store, Memcached::Rails.new
+#config.cache_store = :mem_cache_store, Memcached::Rails.new
 
 # Enable serving of images, stylesheets, and javascripts from an asset server
 # config.action_controller.asset_host = "http://assets.example.com"
