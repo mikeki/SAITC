@@ -26,14 +26,14 @@
       	</div>
       </div>
       <div id="body_section">
-      		<p id="contenido">
+      		<div id="contenido">
       			<%=h sanitize(post.content.gsub("\n", "<br />")) %>
       			<br />
       			<%if current_user%>
     					<%= link_to "Edit", edit_post_path(post) %> |
     					<%= link_to "Destroy", post, :confirm => '¿Seguro que deséas eliminar esta noticia?', :method => :delete %>
       			<%end%>
-      		</p>
+      		</div>
       </div>
       <div id="bottom_section"></div>
   <% end %>
