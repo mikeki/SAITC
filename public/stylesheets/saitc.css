@@ -45,6 +45,7 @@ div#header #botonHeaderFuera{
 	margin: 0px 0px 59px 1px;
 	border: none;
 	opacity:0.5;
+	filter:Alpha(opacity=50);
 }
 
 div#footer{
