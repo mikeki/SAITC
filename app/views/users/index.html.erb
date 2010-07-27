@@ -15,7 +15,7 @@
             <td class="lista"><%=h u.username%></td>
             <td class="lista"><%=h u.email%></td>
             <td class="lista"><%= link_to "Editar", :action => "edit", :id => u.id%></td>
-            <td class="lista"><%= link_to "Eliminar",u, :confirm => '¿Seguro que desea Eliminar al usuario?', :method => :delete%></td>
+            <td class="lista"><%= link_to_unless current_user.id==u.id, "Eliminar",u, :confirm => '¿Seguro que desea Eliminar al usuario?', :method => :delete%></td>
           </tr>
         <%end%>
       </table>
