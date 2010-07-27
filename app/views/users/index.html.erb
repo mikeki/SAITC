@@ -1,0 +1,27 @@
+<div id="maincol">
+  <div id="top_section"><%= @title%></div>
+  <div id="body_section">
+    <div id="contenido">
+      <table class="laptops" cellspacing="0">
+        <tr>
+          <th class="titulos">Username</th>
+          <th class="titulos">Email</th>
+          <th class="titulos">Editar</th>
+          <th class="titulos">Eliminar</th>
+        </tr>
+
+        <% @users.each do |u| %>
+          <tr>
+            <td class="lista"><%=h u.username%></td>
+            <td class="lista"><%=h u.email%></td>
+            <td class="lista"><%= link_to "Editar", :action => "edit", :id => u.id%></td>
+            <td class="lista"><%= link_to "Eliminar",u, :confirm => '¿Seguro que desea Eliminar al usuario?', :method => :delete%></td>
+          </tr>
+        <%end%>
+      </table>
+      <br />
+    </div>
+  </div>
+
+  <div id="bottom_section"></div>
+</div>
