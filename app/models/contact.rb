@@ -8,4 +8,15 @@ class Contact < Tableless
   validates_format_of    :email_address,
                          :with => %r{\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z}i,
                          :message => "debe de parecer una direccion de email"
+                         
+  HUMANIZED_COLUMNS = {
+	  :name => "Nombre",
+	  :email_address => "Email",
+	  :message => "Mensaje",
+	  :subject => "Asunto"
+  }
+
+  def self.human_attribute_name(attribute)
+	  HUMANIZED_COLUMNS[attribute.to_sym] || super
+  end
 end #class

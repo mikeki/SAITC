@@ -16,6 +16,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Successfully created post."
       redirect_to posts_url
     else
+      @title = "Nueva Noticia"
       render :action => 'new'
     end
   end
@@ -31,6 +32,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Successfully updated post."
       redirect_to posts_url
     else
+      @title = "Editando Noticia"
       render :action => 'edit'
     end
   end

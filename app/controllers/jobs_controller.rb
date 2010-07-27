@@ -27,6 +27,7 @@ class JobsController < ApplicationController
       flash[:notice] = "Se publico la oferta de trabajo satisfactoriamente."
       redirect_to @job
     else
+      @title = "Publicar Nueva Oferta de Trabajo"
       flash[:error]="Ocurrio un error al publicar la oferta de trabajo."
       render :action => 'new'
     end
@@ -43,6 +44,7 @@ class JobsController < ApplicationController
       flash[:notice] = "Se actualizo la oferta de trabajo satisfactoriamente."
       redirect_to @job
     else
+      @title = "Editando Oferta de #{@job.company}"
       flash[:error]="Ocurrio un error al actualizar la oferta de trabajo."
       render :action => 'edit'
     end

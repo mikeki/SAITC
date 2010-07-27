@@ -7,6 +7,9 @@
     
     <%= javascript_include_tag :defaults %>
     <%= javascript_include_tag 'jquery-1.4.2' %>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <link rel="stylesheet" href="/pretty/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+  	<script src="/pretty/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
    
 	<script type="text/javascript">
 
@@ -29,21 +32,13 @@
    var $j = jQuery.noConflict();
                   $j(document).ready(function() {
                     setTimeout(hideFlashMessages, 2000);
+                    $j("a[rel^='prettyPhoto']").prettyPhoto({theme:'facebook'});
                   });
 
                   function hideFlashMessages() {
-                    $j('#flash_notice, #flash_error').fadeOut(2000);
+                    $j('#flash_notice, #flash_error').fadeOut(2000);  
                   }
-   </script>
-    <script>
-   var $j = jQuery.noConflict();
-                  $j(document).ready(function() {
-                    setTimeout(hideErrorMessages, 10000);
-                  });
-
-                  function hideErrorMessages() {
-                    $j('#errorExplanation').fadeOut(2000);
-                  }
+                  
    </script>
     <div id="majorContent">
     	<div id="header">
@@ -78,12 +73,14 @@
         		</span>
           </div>
           <div id="subsection">
+            <%= render :partial=>"pages/contact",:controller=>"pages",:action=>"contact" %>
+            
             <%= link_to image_tag("bnoticias.png", :border=>"0",:onmouseover=>"this.style.opacity=.7;", :onmouseout=>"this.style.opacity=1;"), root_path%>
             <%= link_to image_tag("beventos.png", :border=>"0",:onmouseover=>"this.style.opacity=.7;", :onmouseout=>"this.style.opacity=1;"), events_path%>
             <%= link_to image_tag("bbolsa.png", :border=>"0",:onmouseover=>"this.style.opacity=.7;", :onmouseout=>"this.style.opacity=1;"), jobs_path%>
             <%= link_to image_tag("bfotos.png", :border=>"0",:onmouseover=>"this.style.opacity=.7;", :onmouseout=>"this.style.opacity=1;"), gallery_path%>
             <%= link_to image_tag("bquienes.png", :border=>"0",:onmouseover=>"this.style.opacity=.7;", :onmouseout=>"this.style.opacity=1;"), quienes_path%>
-            <%= link_to image_tag("bcontact.png", :border=>"0",:onmouseover=>"this.style.opacity=.7;", :onmouseout=>"this.style.opacity=1;"), contact_path%>
+            <%= link_to image_tag ('bcontact.png', :border => "0", :alt => "Contacto",:onmouseover=>"this.style.opacity=.7;", :onmouseout=>"this.style.opacity=1;"), "#inline_demo", :rel=>"prettyPhoto[inline]" %>
           </div>
           <div id="bottom_subsection"></div>
           <div id="top_subsection">

@@ -60,7 +60,7 @@
   </div>
   <div id="bottom_section"></div>
   <% unless will_paginate.nil?%>
-    <div id="top_section"><%=will_paginate%></div>
+    <div id="top_section"><%=will_paginate :previous_label=>"<<", :next_label=>">>"%></div>
     <div id="body_section"></div>
     <div id="bottom_section"></div>
   <%end%>
