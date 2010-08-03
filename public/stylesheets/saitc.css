@@ -135,17 +135,19 @@ div#majorContent div#top_section #fechaNoticia{
  
 div#majorContent div#body_section div#contenido{
 	text-align: justify;
+	font-size: 12px;
 	margin: -4px 0px 0px 0px;
-	padding: 5px 10px 0px 10px;
+	padding: 10px;
 	border: none;
 
 }
 
 div#majorContent div#body_section p#contenido{
 	text-align: justify;
+	font-size: 12px;
 	line-height: 1.5;
 	margin: -4px 0px 0px 0px;
-	padding: 5px 10px 0px 10px;
+	padding: 10px;
 	border: none;
 
 }
