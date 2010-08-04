@@ -25,7 +25,7 @@
          }); 
     
         $j('#post_haslink').change(function() {
-          if($(this).value=="true"){
+          if($j(this).val()=="true"){
             $j("#link").show("slow");
             $j("#post_link").attr("value","http://www.facebook.com/");
           }else{

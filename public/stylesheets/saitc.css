@@ -6,6 +6,10 @@ body, html {
 	margin: -10px 0px;
 }
 
+body, a {
+    outline: none;
+}
+
 div#majorContent {
 	/*background: #63adf8;
 	border:2px solid white;*/
@@ -111,7 +115,7 @@ div#majorContent div#body_section{
 	background: url(../images/body_section.png) repeat-y;
 /*border:2px solid black;*/
   width:578px;
-	margin: -12px 0px 0px 22px;
+  margin: -12px 0px 0px 22px;
 	
 }
 
@@ -289,7 +293,7 @@ border:1px solid #ccc;
  
  #tituloNoticia{
  border: 0px;
- width:94%; 
+ width:93%; 
  float:right;
  margin-top:-2px; 
  position:relative; 
