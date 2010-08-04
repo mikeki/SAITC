@@ -326,6 +326,7 @@ border:1px solid #ccc;
 
 #linksBajo{
  font-size: 12px;
+ font-weight: bold;
  margin-top: 10px;
  margin-left: 15px;
  border: 0px;
@@ -333,6 +334,11 @@ border:1px solid #ccc;
  float:left; 
  position:relative; 
  }
+ 
+ #linksBajo a:link{color:#0163c8;}
+ #linksBajo a:visited{color:#0163c8;}
+ #linksBajo a:hover{color:#50bef5;}
+ 
 
 #linksBajo img{
  margin-left:10px; 

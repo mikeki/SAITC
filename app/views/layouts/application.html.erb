@@ -134,7 +134,7 @@
             <%= link_to 'Bolsa de Trabajo', jobs_path %> |
             <%= link_to 'Galería de Fotos', gallery_path %> |
             <%= link_to '¿Quiénes Somos?', quienes_path %> |
-            <%= link_to 'Contacto', contact_path %>
+            <%= link_to 'Contacto', "#inline_demo", :rel=>"prettyPhoto[]" %>
             <%if current_user%>
               | <%= link_to 'Logout', logout_path %>
             <%end%>
