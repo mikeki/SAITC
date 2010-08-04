@@ -10,7 +10,9 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "Se inicio sesión satisfactoriamente."
       redirect_to root_url
     else
-      render :action => 'new'
+      flash[:error] = "El nombre de usuario y/o contraseña son incorrectos."
+      @title = "Login"
+      render 'new'
     end
   end
   

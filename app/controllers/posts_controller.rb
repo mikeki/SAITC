@@ -13,11 +13,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     if @post.save
-      flash[:notice] = "Successfully created post."
+      flash[:notice] = "Noticia publicada satisfactoriamente."
       redirect_to posts_url
     else
+      flash[:error] = "Ocurrio un error al publicar la noticia."
       @title = "Nueva Noticia"
-      render :action => 'new'
+      render 'new'
     end
   end
   
@@ -29,18 +30,19 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
-      flash[:notice] = "Successfully updated post."
+      flash[:notice] = "Noticia editada satisfactoriamente."
       redirect_to posts_url
     else
+      flash[:error] = "Ocurrio un error al editar la noticia."
       @title = "Editando Noticia"
-      render :action => 'edit'
+      render 'edit'
     end
   end
   
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:notice] = "Successfully destroyed post."
+    flash[:notice] = "Noticia eliminada satisfactoriamente."
     redirect_to posts_url
   end
 end
