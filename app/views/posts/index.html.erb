@@ -20,7 +20,7 @@
         	</div>
         	<div id="linkNoticia">
         	  <%if post.haslink?%>
-        	    <span><%= link_to image_tag("bface.png", :size=>"33x33", :border=>"0"), post.link%></span>
+        	    <span><%= link_to image_tag("bface.png", :size=>"33x33", :border=>"0"), post.link, :popup=>true%></span>
         	  <%end%>
         	</div>
       	</div>
