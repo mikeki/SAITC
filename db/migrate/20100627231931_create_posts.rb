@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :topic
       t.datetime :date
       t.text :content
-      t.string :link
+      t.string :link, :default => "http://www.facebook.com"
       t.timestamps
     end
   end
