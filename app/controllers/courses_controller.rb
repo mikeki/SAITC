@@ -1,8 +1,9 @@
 class CoursesController < ApplicationController
+  before_filter :require_user
   # GET /courses
   # GET /courses.xml
   def index
-    @courses = Course.all
+    @courses = Course.all(:order => "id asc")
 
     respond_to do |format|
       format.html # index.html.erb

@@ -4,7 +4,7 @@ class AssistantsController < ApplicationController
   # GET /assistants
   # GET /assistants.xml
   def index
-    @assistants = Assistant.all
+    @assistants = Assistant.all(:order => "id asc")
     @title = "Listado de Asistentes"
 
     respond_to do |format|
