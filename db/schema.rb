@@ -9,7 +9,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100723162137) do
+ActiveRecord::Schema.define(:version => 20100901035111) do
+
+  create_table "assistants", :force => true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "email"
+    t.string   "studentid"
+    t.integer  "course_id"
+    t.string   "career"
+    t.boolean  "payed",      :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "courses", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "courseDate"
+    t.integer  "maximumAssistants"
+    t.integer  "assistantsNumber",  :default => 0
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "place"
+  end
 
   create_table "jobs", :force => true do |t|
     t.string   "company"
@@ -32,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20100723162137) do
     t.string   "topic"
     t.datetime "date"
     t.text     "content"
-    t.string   "link"
+    t.string   "link",       :default => "http://www.facebook.com"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "haslink",    :default => false

@@ -1,0 +1,37 @@
+<div id="maincol">
+  <div id="top_section"><%=@title%></div>
+  <div id="body_section">
+    <div id="contenido">
+      <p>
+        <b>Nombre:</b>
+        <%=h "#{@assistant.fname} #{@assistant.lname}" %>
+      </p>
+
+      <p>
+        <b>Email:</b>
+        <%=h @assistant.email %>
+      </p>
+
+      <p>
+        <b>Matricula:</b>
+        <%=h @assistant.studentid %>
+      </p>
+
+      <p>
+        <b>Curso:</b>
+        <%=h @assistant.course.name %>
+      </p>
+
+      <p>
+        <b>Carrera:</b>
+        <%=h @assistant.career %>
+      </p>
+      <%if current_user%>
+        <p>
+          <%= link_to "Editar", edit_assistant_path(@assistant)%> | <%= link_to "Eliminar", @assistant, :confirm => 'Are you sure?', :method => :delete%>
+        </p>
+      <%end%>
+    </div>
+  </div>
+  <div id="bottom_section"></div>
+</div>

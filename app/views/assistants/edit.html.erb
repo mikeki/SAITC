@@ -1,0 +1,36 @@
+<h1>Editing assistant</h1>
+
+<% form_for(@assistant) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :fname %><br />
+    <%= f.text_field :fname %>
+  </p>
+  <p>
+    <%= f.label :lname %><br />
+    <%= f.text_field :lname %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :studentid %><br />
+    <%= f.text_field :studentid %>
+  </p>
+  <p>
+    <%= f.label :career %><br />
+    <%= f.text_field :career %>
+  </p>
+  <p>
+    <%= f.label :payed %><br />
+    <%= f.check_box :payed %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @assistant %> |
+<%= link_to 'Back', assistants_path %>

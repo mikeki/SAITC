@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @course.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @course.description %>
+</p>
+
+<p>
+  <b>Coursedate:</b>
+  <%=h @course.courseDate %>
+</p>
+
+<p>
+  <b>Maximumassistants:</b>
+  <%=h @course.maximumAssistants %>
+</p>
+
+<p>
+  <b>Assistantsnumber:</b>
+  <%=h @course.assistantsNumber %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @course.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

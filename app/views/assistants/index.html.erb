@@ -1,0 +1,33 @@
+<div id="maincol">
+  <div id="top_section"><%=@title%></div>
+  <div id="body_section">
+    <div id="contenido">
+      <table class="tabla">
+        <tr>
+          <th class="titulos">Nombre</th>
+          <th class="titulos">Email</th>
+          <th class="titulos">Matricula</th>
+          <th class="titulos">Carrera</th>
+          <th class="titulos">Curso</th>
+          <th class="titulos">Pagado</th>
+          <th class="titulos">Paga</th>
+        </tr>
+
+      <% @assistants.each do |assistant| %>
+        <tr>
+          <td class="lista"><%=h link_to "#{assistant.fname} #{assistant.lname}", assistant %></td>
+          <td class="lista"><%=h assistant.email %></td>
+          <td class="lista"><%=h assistant.studentid %></td>
+          <td class="lista"><%=h assistant.career %></td>
+          <td class="lista"><%=h assistant.course.name %></td>
+          <td class="lista"><%=h image_tag ("#{assistant.payed}.png") %></td>
+          <td class="lista"><%= button_to "Cobrar", pay_path(assistant)%></td>
+        </tr>
+      <% end %>
+      </table>
+
+      <%= link_to 'New assistant', new_assistant_path %>
+    </div>
+  </div>
+  <div id="bottom_section"></div>
+</div>

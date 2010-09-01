@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  courseDate: 2010-08-31 22:09:32
+  maximumAssistants: 1
+  assistatsNumber: 1
+  price: 1
+
+two:
+  name: MyString
+  description: MyText
+  courseDate: 2010-08-31 22:09:32
+  maximumAssistants: 1
+  assistatsNumber: 1
+  price: 1

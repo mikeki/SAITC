@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <th>Curso</th>
+    <th>Fecha</th>
+    <th>Hora</th>
+    <th>Disponibilidad</th>
+    <th>Precio</th>
+  </tr>
+
+<% @courses.each do |course| %>
+  <tr>
+    <td><%=h course.name %></td>
+    <td><%=h course.courseDate.to_s(:date) %></td>
+    <td><%=h course.courseDate.to_s(:time) %></td>
+    <td><%=h "#{course.maximumAssistants-course.assistantsNumber}/#{course.maximumAssistants}" %></td>
+    <td><%=h course.price %></td>
+    <td><%= link_to 'Show', course %>
+<%= link_to 'Edit', edit_course_path(course) %>
+<%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+<%= link_to 'New course', new_course_path %>

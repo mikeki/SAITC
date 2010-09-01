@@ -1,0 +1,47 @@
+<div id="maincol">
+  <div id="top_section"><%=@title%></div>
+  <div id="body_section">
+    <div id="contenido">
+      <% form_for(@assistant) do |f| %>
+        <%= f.error_messages %>
+
+        <p>
+          <%= f.label :fname %><br />
+          <%= f.text_field :fname %>
+        </p>
+        <p>
+          <%= f.label :lname %><br />
+          <%= f.text_field :lname %>
+        </p>
+        <p>
+          <%= f.label :email %><br />
+          <%= f.text_field :email %>
+        </p>
+        <p>
+          <%= f.label :studentid %><br />
+          <%= f.text_field :studentid %>
+        </p>
+        <p>
+          <%= f.label :course_id %><br />
+          <% if Course.find(:all)%>
+        	  <%Course.find(:all).each do |c|%>
+        	    <%if c.courseDate > Time.zone.now%>
+          	    <%= radio_button("assistant", "course_id", "#{c.id}")%>
+          	    <%= f.label "course_id_#{c.id}", c.name%>
+        	      <br />
+          	  <%end%>
+        	  <%end%>
+        	<%end%>
+        </p>
+        <p>
+          <%= f.label :career %><br />
+			    <%= f.select :career, Assistant::CARRERA, :prompt => "Selecciona una carrera"%>
+        </p>
+        <p>
+          <%= f.submit 'Registrar' %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  <div id="bottom_section"></div>
+</div>
