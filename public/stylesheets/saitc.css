@@ -335,9 +335,9 @@ border:1px solid #ccc;
  position:relative; 
  }
  
- #linksBajo a:link{color:#0163c8;}
- #linksBajo a:visited{color:#0163c8;}
- #linksBajo a:hover{color:#50bef5;}
+ a:link{color:#0163c8;}
+ a:visited{color:#0163c8;}
+ a:hover{color:#50bef5;}
  
 #linksBajo img{
  margin-left:10px; 
@@ -419,7 +419,7 @@ td.lista
 text-align: left;
 font-family: Verdana, sans-serif, Arial;
 font-weight: normal;
-font-size: .7em;
+font-size: 9.4px;
 color: #404040;
 padding-top: 4px;
 padding-bottom: 4px;

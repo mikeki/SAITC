@@ -1,7 +1,7 @@
 class Assistant < ActiveRecord::Base
   belongs_to :course
-  attr_accessible :fname, :lname, :email, :studentid, :course_id, :career, :payed
-  validates_presence_of :fname, :lname, :email, :course_id
+  attr_accessible :fname, :lname, :email, :studentid, :course_id, :career, :payed, :semester
+  validates_presence_of :fname, :lname, :email, :course_id, :semester
   validates_format_of :studentid, :with => /\A\d{6,7}\Z/, :message => "debe de ser de 6 o 7 dígitos"
   validates_format_of    :email,
                          :with => %r{\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z}i,
@@ -14,12 +14,25 @@ class Assistant < ActiveRecord::Base
 	  :studentid => "Matricula",
 	  :course_id => "Curso",
 	  :career => "Carrera",
-	  :payed => "Pagado"
+	  :payed => "Pagado",
+	  :semester => "Semestre"
   }
 
   def self.human_attribute_name(attribute)
 	  HUMANIZED_COLUMNS[attribute.to_sym] || super
   end
+  
+  SEMESTRE = [
+    ["1er Semestre", "1"],
+    ["2o Semestre", "2"],
+    ["3o Semestre", "3"],
+    ["4o Semestre", "4"],
+    ["5o Semestre", "5"],
+    ["6o Semestre", "6"],
+    ["7o Semestre", "7"],
+    ["8o Semestre", "8"],
+    ["9o Semestre", "9"]
+  ]
   
   CARRERA = [
     # Displayed         stored in db

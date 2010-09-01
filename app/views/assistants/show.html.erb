@@ -18,14 +18,20 @@
       </p>
 
       <p>
+        <b>Carrera:</b>
+        <%=h @assistant.career %>
+      </p>
+      
+      <p>
+        <b>Semestre:</b>
+        <%=h @assistant.semester %>
+      </p>
+
+      <p>
         <b>Curso:</b>
         <%=h @assistant.course.name %>
       </p>
 
-      <p>
-        <b>Carrera:</b>
-        <%=h @assistant.career %>
-      </p>
       <%if current_user%>
         <p>
           <%= link_to "Editar", edit_assistant_path(@assistant)%> | <%= link_to "Eliminar", @assistant, :confirm => 'Are you sure?', :method => :delete%>

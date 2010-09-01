@@ -22,6 +22,14 @@
           <%= f.text_field :studentid %>
         </p>
         <p>
+          <%= f.label :career %><br />
+			    <%= f.select :career, Assistant::CARRERA, :prompt => "Selecciona una carrera"%>
+        </p>
+        <p>
+          <%= f.label :semester %><br />
+			    <%= f.select :semester, Assistant::SEMESTRE, :prompt => "Selecciona tu semestre"%>
+        </p>
+        <p>
           <%= f.label :course_id %><br />
           <% if Course.find(:all)%>
         	  <%Course.find(:all).each do |c|%>
@@ -32,10 +40,6 @@
           	  <%end%>
         	  <%end%>
         	<%end%>
-        </p>
-        <p>
-          <%= f.label :career %><br />
-			    <%= f.select :career, Assistant::CARRERA, :prompt => "Selecciona una carrera"%>
         </p>
         <p>
           <%= f.submit 'Registrar' %>
