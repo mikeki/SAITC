@@ -89,6 +89,7 @@ class AssistantsController < ApplicationController
   # DELETE /assistants/1.xml
   def destroy
     @assistant = Assistant.find(params[:id])
+    @assistant.course.update_attribute(:assistantsNumber, @assistant.course.assistantsNumber - 1)
     @assistant.destroy
 
     respond_to do |format|
