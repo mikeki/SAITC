@@ -32,7 +32,7 @@
         <p>
           <%= f.label :course_id %><br />
           <% if Course.find(:all)%>
-        	  <%Course.find(:all).each do |c|%>
+        	  <%Course.find(:all, :order => "id asc").each do |c|%>
         	    <%if c.courseDate > Time.zone.now%>
           	    <%= radio_button("assistant", "course_id", "#{c.id}")%>
           	    <%= f.label "course_id_#{c.id}", c.name%>
