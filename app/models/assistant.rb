@@ -1,7 +1,7 @@
 class Assistant < ActiveRecord::Base
   belongs_to :course
   attr_accessible :fname, :lname, :email, :studentid, :course_id, :career, :payed, :semester
-  validates_presence_of :fname, :lname, :email, :course_id, :semester
+  validates_presence_of :fname, :lname, :email, :course_id
   validates_format_of :studentid, :with => /\A\d{6,7}\Z/, :message => "debe de ser de 6 o 7 dígitos"
   validates_format_of    :email,
                          :with => %r{\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z}i,
