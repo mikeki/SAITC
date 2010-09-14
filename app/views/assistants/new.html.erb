@@ -36,10 +36,10 @@
         	    <%if c.courseDate > Time.zone.now%>
         	      <%if c.assistantsNumber == c.maximumAssistants%>
         	        <%= radio_button("assistant", "course_id", "#{c.id}", :disabled=>"disabled")%>
-          	      <%= f.label "course_id_#{c.id}", c.name%>
+          	      <%= f.label "course_id_#{c.id}", "#{c.name} #{number_to_currency(c.price)}"%>
         	      <%else%>
           	      <%= radio_button("assistant", "course_id", "#{c.id}")%>
-          	      <%= f.label "course_id_#{c.id}", c.name%>
+          	      <%= f.label "course_id_#{c.id}", "#{c.name} #{number_to_currency(c.price)}"%>
           	    <%end%>
         	      <br />
           	  <%end%>
