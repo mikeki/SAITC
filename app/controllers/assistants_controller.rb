@@ -50,7 +50,7 @@ class AssistantsController < ApplicationController
 
     if @assistant.save
       flash[:notice] = 'Asistentes registrado satisfactoriamente.'
-      @assistant.course.update_attribute(:assistantsNumber, @assistant.course.assistantsNumber + 1)
+      @assistant.course.update_attribute(:assistantsNumber, @assistant.course.assistants.count)
       redirect_to @assistant
     else
       @title = "Registro de Asistente"

@@ -1,9 +1,10 @@
 class CoursesController < ApplicationController
-  before_filter :require_user
+  before_filter :require_user, :except=>[:index, :show]
   # GET /courses
   # GET /courses.xml
   def index
     @courses = Course.all(:order => "id asc")
+    @title = "Cursos semestrales"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +16,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.xml
   def show
     @course = Course.find(params[:id])
+    @title = "Curso de #{@course.name}"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,6 +28,7 @@ class CoursesController < ApplicationController
   # GET /courses/new.xml
   def new
     @course = Course.new
+    @title = "Nuevo Curso"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +39,7 @@ class CoursesController < ApplicationController
   # GET /courses/1/edit
   def edit
     @course = Course.find(params[:id])
+    @title = "Editando curso de #{@course.name}"
   end
 
   # POST /courses
@@ -80,5 +84,11 @@ class CoursesController < ApplicationController
       format.html { redirect_to(courses_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def lista
+    course = Course.find(params[:id])
+    @title = "Asistentes al curso de #{course.name}"
+    @assistants = course.assistants
   end
 end

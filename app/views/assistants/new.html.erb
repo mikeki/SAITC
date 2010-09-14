@@ -34,8 +34,13 @@
           <% if Course.find(:all)%>
         	  <%Course.find(:all, :order => "id asc").each do |c|%>
         	    <%if c.courseDate > Time.zone.now%>
-          	    <%= radio_button("assistant", "course_id", "#{c.id}")%>
-          	    <%= f.label "course_id_#{c.id}", c.name%>
+        	      <%if c.assistantsNumber == c.maximumAssistants%>
+        	        <%= radio_button("assistant", "course_id", "#{c.id}", :disabled=>"disabled")%>
+          	      <%= f.label "course_id_#{c.id}", c.name%>
+        	      <%else%>
+          	      <%= radio_button("assistant", "course_id", "#{c.id}")%>
+          	      <%= f.label "course_id_#{c.id}", c.name%>
+          	    <%end%>
         	      <br />
           	  <%end%>
         	  <%end%>

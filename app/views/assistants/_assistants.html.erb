@@ -1,0 +1,40 @@
+<div id="maincol">
+  <div id="top_section"><%=@title%></div>
+  <div id="body_section">
+    <div id="contenido">
+      Total de Asistentes: <%=@assistants.count%>
+      <br/>
+      <table class="tabla">
+        <tr>
+          <th class="titulos">Nombre</th>
+          <th class="titulos">Email</th>
+          <th class="titulos">Mat.</th>
+          <th class="titulos">Carrera</th>
+          <th class="titulos">Sem.</th>
+          <th class="titulos">Curso</th>
+          <th class="titulos">Pagado</th>
+          <th class="titulos">Paga</th>
+        </tr>
+
+      <% @assistants.each do |assistant| %>
+        <tr>
+          <td class="lista"><%=h link_to "#{assistant.fname} #{assistant.lname}", assistant %></td>
+          <td class="lista"><%=h assistant.email %></td>
+          <td class="lista"><%=h assistant.studentid %></td>
+          <td class="lista"><%=h assistant.career %></td>
+          <td class="lista"><%=h assistant.semester %></td>
+          <td class="lista"><%=h assistant.course.name %></td>
+          <td class="lista"><%=h image_tag ("#{assistant.payed}.png") %></td>
+          <%unless assistant.payed?%>
+          <td class="lista"><%= button_to "Cobrar", pay_path(assistant)%></td>
+          <%else%>
+          <td class="lista"></td>
+          <%end%>
+        </tr>
+      <% end %>
+      </table>
+
+    </div>
+  </div>
+  <div id="bottom_section"></div>
+</div>

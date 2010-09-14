@@ -20,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.contact "contacto", :controller=>"pages", :action=>"contact"
   map.sent "contacto/enviado", :controller=>"pages", :action=>"enviar_mensaje"
   map.pay "asistentes/:id/pay", :controller=>"assistants", :action=>"pay"
+  map.lista_asistentes "cursos/:id/lista", :controller=>"courses", :action=>"lista"
 
   # The priority is based upon order of creation: first created -> highest priority.
 

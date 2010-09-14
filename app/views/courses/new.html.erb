@@ -1,31 +1,37 @@
-<h1>New course</h1>
+<div id="maincol">
+  <div id="top_section"><%=@title%></div>
+  <div id="body_section">
+    <div id="contenido">
+      <% form_for(@course) do |f| %>
+        <%= f.error_messages %>
 
-<% form_for(@course) do |f| %>
-  <%= f.error_messages %>
+        <p>
+          <%= f.label :name %><br />
+          <%= f.text_field :name %>
+        </p>
+        <p>
+          <%= f.label :description %><br />
+          <%= f.text_area :description %>
+        </p>
+        <p>
+          <%= f.label :courseDate %><br />
+          <%= f.datetime_select :courseDate %>
+        </p>
+        <p>
+          <%= f.label :maximumAssistants %><br />
+          <%= f.text_field :maximumAssistants %>
+        </p>
+        <p>
+          <%= f.label :price %><br />
+          <%= f.text_field :price %>
+        </p>
+        <p>
+          <%= f.submit 'Crear' %>
+        </p>
+      <% end %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :courseDate %><br />
-    <%= f.datetime_select :courseDate %>
-  </p>
-  <p>
-    <%= f.label :maximumAssistants %><br />
-    <%= f.text_field :maximumAssistants %>
-  </p>
-  <p>
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </p>
-  <p>
-    <%= f.submit 'Crear' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', courses_path %>
+      <%= link_to 'Back', courses_path %>
+     </div>
+  </div>
+  <div id="bottom_section"></div>
+</div>

@@ -1,28 +1,54 @@
-<table>
-  <tr>
-    <th>Curso</th>
-    <th>Fecha</th>
-    <th>Hora</th>
-    <th>Disponibilidad</th>
-    <th>Precio</th>
-  </tr>
+<div id="maincol">
+  <div id="top_section"><%=@title%></div>
+  <div id="body_section">
+    <div id="contenido">
+      <table class="tabla">
+        <tr>
+          <th class="titulos">Curso</th>
+          <th class="titulos">Fecha</th>
+          <th class="titulos">Hora</th>
+          <th class="titulos">Disponibilidad</th>
+          <th class="titulos">Precio</th>
+          <%if @current_user%>
+          <th class="titulos">Admin</th>
+          <%end%>
+        </tr>
 
-<% @courses.each do |course| %>
-  <tr>
-    <td><%=h course.name %></td>
-    <td><%=h course.courseDate.to_s(:date) %></td>
-    <td><%=h course.courseDate.to_s(:time) %></td>
-    <td><%=h "#{course.maximumAssistants-course.assistantsNumber}/#{course.maximumAssistants}" %></td>
-    <td><%=h course.price %></td>
-    <td><%= link_to 'Show', course %>
-<%= link_to 'Edit', edit_course_path(course) %>
-<%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-
-
-<%= link_to 'New course', new_course_path %>
+      <% @courses.each do |course| %>
+        <%if !current_user%>
+          <%if course.courseDate > Time.zone.now%>
+        <tr>
+          <td class="lista"><%=h link_to course.name, course %></td>
+          <td class="lista"><%=h course.courseDate.to_s(:date) %></td>
+          <td class="lista"><%=h course.courseDate.to_s(:time) %></td>
+          <td class="lista"><%=h "#{course.maximumAssistants-course.assistantsNumber}/#{course.maximumAssistants}" %></td>
+          <td class="lista"><%=h number_to_currency(course.price) %></td>
+          <%if current_user%>
+          <td class="lista"><%= link_to 'Editar', edit_course_path(course) %>
+      <%= link_to 'Eliminar', course, :confirm => '¿Estas seguro?', :method => :delete %></td>
+          <%end%>
+        </tr>
+          <%end%>
+        <%else%>
+        <tr>
+          <td class="lista"><%=h link_to course.name, course %></td>
+          <td class="lista"><%=h course.courseDate.to_s(:date) %></td>
+          <td class="lista"><%=h course.courseDate.to_s(:time) %></td>
+          <td class="lista"><%=h "#{course.maximumAssistants-course.assistantsNumber}/#{course.maximumAssistants}" %></td>
+          <td class="lista"><%=h number_to_currency(course.price) %></td>
+          <%if current_user%>
+          <td class="lista"><%= link_to 'Editar', edit_course_path(course) %>
+      <%= link_to 'Eliminar', course, :confirm => '¿Estas seguro?', :method => :delete %></td>
+          <%end%>
+        </tr>
+        <%end%>
+      <% end %>
+      </table>
+      <%if current_user%>
+      <br />
+      <%= link_to 'Nuevo Curso', new_course_path %>
+      <%end%>
+    </div>
+  </div>
+  <div id="bottom_section"></div>
+</div>
