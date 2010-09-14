@@ -9,7 +9,7 @@
 
       <p>
         <b>Descripción:</b>
-        <%=h @course.description %>
+        <%=h sanitize(@course.description.gsub("\n", "<br />")) %>
       </p>
 
       <p>
