@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :require_user, :except => [:index]
   def index
     @title = "Home"
-    @posts = Post.paginate(:page=>params[:page], :per_page=>3, :order=>"created_at DESC")
+    @posts = Post.paginate(:page=>params[:page], :per_page=>4, :order=>"created_at DESC")
   end
   
   def new
