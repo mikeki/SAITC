@@ -9,6 +9,9 @@
           <p>Mensaje:<br />
              <%= text_area("contact", "message", {"cols"=>"40", "rows"=>"5"}) -%>
           </p>
+          <p>
+            <%= recaptcha_tags :ajax => false, :display => {:theme => 'blackglass'}, :message=> "Intenta de nuevo con el codigo."%>
+          </p>
           <%= submit_tag "Enviar" -%>
         <% end -%>
 

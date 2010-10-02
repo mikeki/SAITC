@@ -21,6 +21,7 @@
           <%= c.label :message%><br />
           <%= c.text_area :message, :cols=>40, :rows=>5 -%>
         </p>
+          <%= recaptcha_tags :display => {:theme => 'blackglass'}%>
         <br />
         <%= c.submit "Enviar" -%>
       <% end -%>

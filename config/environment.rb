@@ -26,6 +26,7 @@ Rails::Initializer.run do |config|
   #HABILITAR AL HACER DEPLOYMENT
   config.gem 'memcached-northscale', :lib => 'memcached'
   require 'memcached'
+  config.gem "ambethia-recaptcha", :lib => "recaptcha/rails", :source => "http://gems.github.com"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -49,6 +50,9 @@ Rails::Initializer.run do |config|
   config.i18n.default_locale = :es
 
 end
+# reCaptcha
+ENV['RECAPTCHA_PUBLIC_KEY']  = '6LfJh70SAAAAAIIS5j0X3cmB4Z5h6Bv-VaEDqsZa'
+ENV['RECAPTCHA_PRIVATE_KEY'] = '6LfJh70SAAAAAO96RyDVyfn0uv6hU3nv-hqFWiJy'
 
 ####################################################################################
 # Configuracion del gmail                                                          #
