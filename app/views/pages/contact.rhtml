@@ -21,7 +21,10 @@
           <%= c.label :message%><br />
           <%= c.text_area :message, :cols=>40, :rows=>5 -%>
         </p>
-          <%= recaptcha_tags :display => {:theme => 'blackglass'}%>
+        <p>
+           <%= c.label :captcha, "Escribe con letras minusculas el numero 10:"%><br />
+           <%= text_field("contact", "captcha")-%>
+        </p>
         <br />
         <%= c.submit "Enviar" -%>
       <% end -%>

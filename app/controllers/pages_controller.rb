@@ -24,7 +24,7 @@ class PagesController < ApplicationController
 #----------------------------------------------------
   def enviar_mensaje
     @contact = Contact.new(params['contact'])
-    if @contact.valid? && verify_recaptcha(@contact) && @contact.save
+    if @contact.save
       begin
         ContactMailer::deliver_contact_message(@contact)
         flash[:notice] = 'El mensaje fue enviado satisfactoriamente.'
