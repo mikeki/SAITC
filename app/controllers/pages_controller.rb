@@ -11,6 +11,10 @@ class PagesController < ApplicationController
     @title = "¿Quiénes Somos?"
   end
   
+  def kids
+    @title = "Kids & Technology"
+  end
+  
 #----------------------------------------------------
 # muestra la forma de contacto
 #----------------------------------------------------

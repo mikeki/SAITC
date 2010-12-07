@@ -82,7 +82,7 @@ class AssistantsController < ApplicationController
     else
       flash[:error] = 'No se pudo guardar el cobro'
     end
-    redirect_to assistants_path
+    redirect_to :back
   end  
   
   # DELETE /assistants/1

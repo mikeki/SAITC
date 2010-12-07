@@ -17,6 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   map.gallery "galeria", :controller => "pages", :action=>"gallery"
   map.events "eventos", :controller=>"pages", :action=>"calendar"
   map.quienes "quienessomos", :controller=>"pages", :action=>"about"
+  map.kids "kt", :controller=>"pages", :action=>"kids"
   map.contact "contacto", :controller=>"pages", :action=>"contact"
   map.sent "contacto/enviado", :controller=>"pages", :action=>"enviar_mensaje"
   map.pay "asistentes/:id/pay", :controller=>"assistants", :action=>"pay"
